@@ -5,4 +5,4 @@ bot.on("ready", async () => {
   console.log("ready to be ready")
 });
 
-bot.login(process.env.token)
+bot.login(process.env.token);
