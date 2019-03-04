@@ -60,7 +60,12 @@ bot.on("message", message => {
     return message.channel.send(embed2)
   } else
   if (cmd === `auction`){
-    let auctionrole = message.guild.roles.find(`name`, `[Auction Bidder]`)
+    let realrole = message.guild.roles.find(`name`, role)
+    if(message.member.has(realrole.id)){
+      message.member.removeRole(auctionrole.id).then(messag => {
+        return message.reply("Successfully removed role Auction Bidder from you")
+      })
+    }
     message.member.addRole(auctionrole.id).then(messag => {
       return message.reply("Successfully added role Auction Bidder to you")
     })
