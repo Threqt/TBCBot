@@ -61,15 +61,11 @@ bot.on("message", message => {
     let rewards = ['1', 'gamer', '2', 'moon']
     let ahh = message.content.slice(8, message.content.size)
     let question = ahh.slice(0, 1)
-    console.log(question)
     let answer = ahh.slice(2, ahh.size).toLowerCase()
-    console.log(answer)
     let reward = ''
     for (let i = 0; i < answers.length; i++){
       if (question === answers[i]) {
-        console.log("1")
         if (answer === answers[i + 1]) {
-          console.log("2")
           reward = rewards[i + 1]
           return message.reply(`Great. One of the ciphers is ${reward}`)
         } else
