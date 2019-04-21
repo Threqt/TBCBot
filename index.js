@@ -7,7 +7,7 @@ const bot = new Discord.Client({
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
-  bot.user.setActivity("over general so it doesen't get deleted again", {
+  bot.user.setActivity("over general so it doesn't get deleted again", {
     type: "WATCHING"
   });
 });
