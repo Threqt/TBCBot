@@ -21,7 +21,7 @@ bot.on("message", message => {
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const cmd = args.shift().toLowerCase();
 
-  if (cmd === `botinfo`) && (message.channel.type != "dm") {
+  if (cmd === `botinfo` && message.channel.type != "dm") {
     const embed = new Discord.RichEmbed()
       .setAuthor(`Arc Bot`, bot.user.avatarURL)
       .setThumbnail(bot.user.avatarURL)
@@ -35,7 +35,7 @@ bot.on("message", message => {
 
     return message.channel.send(embed)
   } else
-  if (cmd === `serverinfo`) && (message.channel.type != "dm") {
+  if (cmd === `serverinfo` && message.channel.type != "dm") {
     let sicon = message.guild.iconURL
     let online = message.guild.members.filter(m => m.presence.status !== 'offline').size
     let categories = message.guild.channels.filter(m => m.type === 'category').size
