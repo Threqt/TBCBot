@@ -7,7 +7,7 @@ const bot = new Discord.Client({
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
-  bot.user.setActivity("over the Gangsters", {
+  bot.user.setActivity("over general so it doesen't get deleted again", {
     type: "WATCHING"
   });
 });
@@ -57,7 +57,7 @@ bot.on("message", message => {
   } else
   if (cmd === `answer` && message.channel.type === "dm") {
     let answers = ['1', 'bunnybot', '2', 'pokemon', '3', 'game of thrones']
-    let rewards = ['1', 'gamer', '2', 'moon']
+    let rewards = ['1', 'gamer', '2', 'moon', '3', 'idiot']
     let ahh = message.content.slice(8, message.content.size)
     let question = ahh.slice(0, 1)
     let answer = ahh.slice(2, ahh.size).toLowerCase()
