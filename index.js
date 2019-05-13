@@ -22,9 +22,9 @@ bot.on("message", message => {
 
   if (cmd === `botinfo` && message.channel.type != "dm") {
     const embed = new Discord.RichEmbed()
-      .setAuthor(`Arc Bot`, bot.user.avatarURL)
+      .setAuthor(`Tumbleweed Bot`, bot.user.avatarURL)
       .setThumbnail(bot.user.avatarURL)
-      .addField(`Bot Name`, `Arc Bot`, true)
+      .addField(`Bot Name`, `Tumbleweed Bot`, true)
       .addField(`Created On`, bot.user.createdAt)
       .addField(`Version`, `1.0.0`, true)
       .addField(`Developer`, `Threqt#4377`, true)
@@ -39,7 +39,7 @@ bot.on("message", message => {
     let online = message.guild.members.filter(m => m.presence.status !== 'offline').size
     let categories = message.guild.channels.filter(m => m.type === 'category').size
     let embed2 = new Discord.RichEmbed()
-      .setAuthor("Arc Bot", bot.user.avatarURL)
+      .setAuthor("Tumbleweed Bot", bot.user.avatarURL)
       .setThumbnail(sicon)
       .addField("Owner", message.guild.owner, true)
       .addField("Created", message.guild.createdAt, true)
