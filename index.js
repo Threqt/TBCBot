@@ -64,7 +64,7 @@ bot.on("message", message => {
     return message.channel.send(embed2)
   } else
   if(cmd === `update`){
-    let role = member.guild.roles.find('name', 'Mr.Bot')
+    let role = message.member.guild.roles.find('name', 'Mr.Bot')
     if(message.member.roles.has(role.id)){
       message.delete()
       let update = new Discord.RichEmbed()
