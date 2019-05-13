@@ -1,6 +1,7 @@
 const config = require("./botconfig");
 const Discord = require("discord.js");
-
+var version = "v0.1"
+var updateno = "1"
 const bot = new Discord.Client({
   disableEverybody: true
 });
@@ -61,6 +62,18 @@ bot.on("message", message => {
       .setTimestamp();
 
     return message.channel.send(embed2)
+  } else
+  if(cmd === `update`){
+    message.delete()
+    let update = new Discord.RichEmbed()
+      .setAuthor("Tumbleweed Bot", bot.user.avatarURL)
+      .setThumbnail(bot.user.avatarURL)
+      .setTitle(`Update Number ${updateno} | Version Number ${version}`)
+      //•
+      .setDescription("Update Details: \n • Added autorole to the bot \n • Added update command to keep people informed on updates")
+      .setFooter(`Prefix: ! | Tumbleweed Bot | ${version}`, bot.user.avatarURL)
+      .setTimestamp();
+    message.channel.send(update)
   }
 });
 
