@@ -72,7 +72,7 @@ bot.on("message", message => {
         .setThumbnail(bot.user.avatarURL)
         .setTitle(`Update Number ${updateno} | Version Number ${version}`)
         //•
-        .setDescription("Update Details: \n • Added autorole to the bot \n • Added update command to keep people informed on updates")
+        .setDescription("Update Details: \n • Added autorole to the bot \n • Added update command to keep people informed on updates \n \n Planned features: \n • Poll command \n • Auto role \n • Chat moderation")
         .setFooter(`Prefix: ! | Tumbleweed Bot | ${version}`, bot.user.avatarURL)
         .setTimestamp();
       message.channel.send(update)
