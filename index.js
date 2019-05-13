@@ -64,16 +64,19 @@ bot.on("message", message => {
     return message.channel.send(embed2)
   } else
   if(cmd === `update`){
-    message.delete()
-    let update = new Discord.RichEmbed()
-      .setAuthor("Tumbleweed Bot", bot.user.avatarURL)
-      .setThumbnail(bot.user.avatarURL)
-      .setTitle(`Update Number ${updateno} | Version Number ${version}`)
-      //•
-      .setDescription("Update Details: \n • Added autorole to the bot \n • Added update command to keep people informed on updates")
-      .setFooter(`Prefix: ! | Tumbleweed Bot | ${version}`, bot.user.avatarURL)
-      .setTimestamp();
-    message.channel.send(update)
+    let role = member.guild.roles.find('name', 'Mr.Bot')
+    if(message.member.roles.has(role.id)){
+      message.delete()
+      let update = new Discord.RichEmbed()
+        .setAuthor("Tumbleweed Bot", bot.user.avatarURL)
+        .setThumbnail(bot.user.avatarURL)
+        .setTitle(`Update Number ${updateno} | Version Number ${version}`)
+        //•
+        .setDescription("Update Details: \n • Added autorole to the bot \n • Added update command to keep people informed on updates")
+        .setFooter(`Prefix: ! | Tumbleweed Bot | ${version}`, bot.user.avatarURL)
+        .setTimestamp();
+      message.channel.send(update)
+    }
   }
 });
 
