@@ -29,13 +29,12 @@ async function poll(message, bot){
       time: 1800000,
       errors: ['time']
     })
-    if(!collected2){
+    if(!collected2.first().content){
       return message.channel.send("No content!")
     }
     if(collected2.first().content.toLowerCase() == 'cancel'){
       return message.channel.send("Cancelled.")
     }
-
     let time1 = parseInt(collected2.first().content)
 
     let pollEmbed = new Discord.RichEmbed()
