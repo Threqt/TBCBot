@@ -47,7 +47,7 @@ async function poll(message, bot){
       .setTimestamp();
 
     await bot.channels.find(channel => channel.id === "577276201026977802").send(pollEmbed)
-    bot.channels.find(channel => channel.id === "577276201026977802").send(`@everyone Vote 👍 if you agree, vote 👎 if you don't`).then(async msg => {
+    bot.channels.find(channel => channel.id === "577276201026977802").send(`@everyone`).then(async msg => {
       await msg.react('👍')
       await msg.react('👎')
 
